@@ -32,7 +32,7 @@ It will create the required infrastructure:
 
 Version of Kubernetes to be used in the RKE cluster can be controlled with [kubernetes_version](#kubernetes_version), which depends on the version of terraform-provider-rke being used in which depends on the version of RKE binary beind used in that provider version.
 
-To get the list of available (and the default) version of Kubernetes take a look at release notes of [terraform-provider-rke](https://github.com/yamamoto-febc/terraform-provider-rke/releases) and [RKE](#https://github.com/rancher/rke/releases) respectively.
+To get the list of available (and the default) version of Kubernetes take a look at release notes of [terraform-provider-rke](https://github.com/yamamoto-febc/terraform-provider-rke/releases) and [RKE](https://github.com/rancher/rke/releases) respectively.
 
 ## Required Inputs
 
