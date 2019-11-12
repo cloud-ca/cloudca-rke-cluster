@@ -1,6 +1,6 @@
 # Overview
 
-This terraform configuration is used to build a RKE cluster on [cloud.ca](https://cloud.ca/) infrastructure.
+This terraform configuration is used to build a [Rancher Kubernetes Engine (RKE)](https://github.com/rancher/rke) cluster on [cloud.ca](https://cloud.ca/) infrastructure.
 
 ## Table of Content
 
