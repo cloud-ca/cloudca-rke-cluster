@@ -79,7 +79,9 @@ To get the list of available (and the default) version of Kubernetes take a look
 2. Create `terraform.tfvars` containing:
 
     ```toml
-    api_key = "<cloud_ca_API_KEY>"
+    api_key        = "<cloud_ca_API_KEY>"
+    environment_id = "<ENVIRONMENT_ID>"   # to create cluster in
+    network_id     = "<NETWORK_ID>"       # to create cluster in
     ```
 
 3. Execute the following command to initialize the repository:
