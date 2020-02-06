@@ -40,10 +40,10 @@ document: ## Generate document in README
 	@ $(MAKE) --no-print-directory log-$@
 	@ if [ "`grep "terraform-docs starts" README.md | wc -l`" = 0 ]; then															\
 		echo "${START_TOKEN}\n" >> README.md ;																		\
-		terraform-docs markdown table ./ >> README.md ;												\
+		terraform-docs markdown table --sort-by-required ./ >> README.md ;												\
 		echo "${END_TOKEN}" >> README.md ;																		\
 	else																							\
-		terraform-docs markdown table ./ > "./tmp_doc" ;												\
+		terraform-docs markdown table --sort-by-required ./ > "./tmp_doc" ;												\
 		perl -i -ne 'if (/${START_TOKEN}/../${END_TOKEN}/) { print $$_ if /${START_TOKEN}/; print "\nI_WANT_TO_BE_REPLACED\n$$_" if /${END_TOKEN}/;} else { print $$_ }' README.md ;	\
 		perl -i -e 'open(F, "'"./tmp_doc"'"); $$f = join "", <F>; while(<>){if (/I_WANT_TO_BE_REPLACED/) {print $$f} else {print $$_};}' README.md ;					\
 		rm -f "./tmp_doc" ;																				\

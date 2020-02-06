@@ -50,9 +50,9 @@ To get the list of available (and the default) version of Kubernetes take a look
 |------|-------------|------|---------|:-----:|
 | api\_key | cloud.ca API key to use | `any` | n/a | yes |
 | environment\_id | The environment ID to create resources in | `any` | n/a | yes |
+| network\_id | The network ID to create resources in | `any` | n/a | yes |
 | kubernetes\_version | Kubernetes version to install in the cluster | `string` | `"v1.15.3-rancher1-1"` | no |
 | master\_count | Number of master node(s) to create | `number` | `1` | no |
-| network\_id | The network ID to create resources in | `any` | n/a | yes |
 | node\_prefix | Prefix to be used in name of instances, e.g. `cca` in `cca-foo-service01` | `string` | `"cca"` | no |
 | node\_service | Service to be used in name of instances, e.g. `service` in `cca-foo-service01` | `string` | `"rke"` | no |
 | node\_type | Type to be used in name of instances, e.g. `foo` in `cca-foo-service01` | `string` | `"cluster"` | no |
