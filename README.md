@@ -24,7 +24,7 @@ It will create the required infrastructure:
 - [Terraform](https://www.terraform.io/downloads.html) 0.12+
 - [Terraform Provider for cloud.ca](https://github.com/cloud-ca/terraform-provider-cloudca) 1.5+
 - [Terraform Provider for RKE](https://github.com/yamamoto-febc/terraform-provider-rke) 0.14.1
-- [terraform-docs](https://github.com/segmentio/terraform-docs) 0.5+
+- [terraform-docs](https://github.com/segmentio/terraform-docs) 0.8+
 
 ## Available Kubernetes Versions
 

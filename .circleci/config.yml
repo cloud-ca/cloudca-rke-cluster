@@ -1,6 +1,6 @@
 _defaults: &defaults
   docker:
-    - image: hashicorp/terraform:0.12.4
+    - image: hashicorp/terraform:0.12.20
 
 _run:
   setenv: &setenv
