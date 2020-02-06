@@ -1,8 +1,8 @@
 # Project variables
 NAME        := cloudca-rke-cluster
 DESCRIPTION := Terraform config to create RKE cluster on cloud.ca
-AUTHO       := Khosrow Moossavi (@khos2ow)
-URL         := https://github.com/khos2ow/cloudca-rke-cluster
+AUTHOR      := cloud.ca team
+URL         := https://github.com/cloud-ca/cloudca-rke-cluster
 LICENSE     := MIT
 
 .PHONY: default

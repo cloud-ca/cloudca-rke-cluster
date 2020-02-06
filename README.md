@@ -73,7 +73,7 @@ To get the list of available (and the default) version of Kubernetes take a look
 1. Clone the repository into an appropriate name:
 
     ```bash
-    git clone https://github.com/khos2ow/cloudca-rke-cluster.git cloudca-rke-cluster
+    git clone https://github.com/cloud-ca/cloudca-rke-cluster.git cloudca-rke-cluster
     ```
 
 2. Create `terraform.tfvars` containing:
