@@ -95,7 +95,7 @@ To get the list of available (and the default) version of Kubernetes take a look
 ```text
 MIT License
 
-Copyright (c) 2019 Khosrow Moossavi
+Copyright (c) 2019 cloud.ca
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
