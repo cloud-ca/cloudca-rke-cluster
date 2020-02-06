@@ -7,8 +7,7 @@ This terraform configuration is used to build a [Rancher Kubernetes Engine (RKE)
 - [Resources](#resources)
 - [Requirements](#requirements)
 - [Available Kubernetes Versions](#available-kubernetes-versions)
-- [Required Inputs](#required-inputs)
-- [Optional Inputs](#optional-inputs)
+- [Inputs](#rinputs)
 - [Outputs](#outputs)
 - [Usage](#usage)
 - [License](#license)
@@ -35,99 +34,37 @@ To get the list of available (and the default) version of Kubernetes take a look
 
 <!-- terraform-docs starts -->
 
-## Required Inputs
+## Providers
 
-The following input variables are required:
+| Name | Version |
+|------|---------|
+| cloudca | ~> 1.5 |
+| local | n/a |
+| rke | 0.14.1 |
+| template | n/a |
+| tls | n/a |
 
-### api\_key
+## Inputs
 
-Description: cloud.ca API key to use
-
-Type: `string`
-
-### environment\_id
-
-Description: The environment ID to create resources in
-
-Type: `string`
-
-### network\_id
-
-Description: The network ID to create resources in
-
-Type: `string`
-
-## Optional Inputs
-
-The following input variables are optional (have default values):
-
-### kubernetes\_version
-
-Description: Kubernetes version to install in the cluster
-
-Type: `string`
-
-Default: `"v1.15.3-rancher1-1"`
-
-### master\_count
-
-Description: Number of master node(s) to create
-
-Type: `string`
-
-Default: `"1"`
-
-### node\_prefix
-
-Description: Prefix to be used in name of instances, e.g. `cca` in `cca-foo-service01`
-
-Type: `string`
-
-Default: `"cca"`
-
-### node\_service
-
-Description: Service to be used in name of instances, e.g. `service` in `cca-foo-service01`
-
-Type: `string`
-
-Default: `"rke"`
-
-### node\_type
-
-Description: Type to be used in name of instances, e.g. `foo` in `cca-foo-service01`
-
-Type: `string`
-
-Default: `"cluster"`
-
-### node\_username
-
-Description: The username to create in the nodes with SSH access
-
-Type: `string`
-
-Default: `"rke"`
-
-### worker\_count
-
-Description: Number of worker node(s) to create
-
-Type: `string`
-
-Default: `"2"`
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:-----:|
+| api\_key | cloud.ca API key to use | `any` | n/a | yes |
+| environment\_id | The environment ID to create resources in | `any` | n/a | yes |
+| kubernetes\_version | Kubernetes version to install in the cluster | `string` | `"v1.15.3-rancher1-1"` | no |
+| master\_count | Number of master node(s) to create | `number` | `1` | no |
+| network\_id | The network ID to create resources in | `any` | n/a | yes |
+| node\_prefix | Prefix to be used in name of instances, e.g. `cca` in `cca-foo-service01` | `string` | `"cca"` | no |
+| node\_service | Service to be used in name of instances, e.g. `service` in `cca-foo-service01` | `string` | `"rke"` | no |
+| node\_type | Type to be used in name of instances, e.g. `foo` in `cca-foo-service01` | `string` | `"cluster"` | no |
+| node\_username | The username to create in the nodes with SSH access | `string` | `"rke"` | no |
+| worker\_count | Number of worker node(s) to create | `number` | `2` | no |
 
 ## Outputs
 
-The following outputs are exported:
-
-### master\_ips
-
-Description: List of private IP of master node(s)
-
-### worker\_ips
-
-Description: List of private IP of worker node(s)
+| Name | Description |
+|------|-------------|
+| master\_ips | List of private IP of master node(s) |
+| worker\_ips | List of private IP of worker node(s) |
 
 <!-- terraform-docs ends -->
 
