@@ -4,6 +4,6 @@ output "private_ips" {
 }
 
 output "nodes_ready" {
-  depends_on = ["null_resource.node_setup"]
+  depends_on = [null_resource.node_setup]
   value      = "true"
 }
