@@ -5,7 +5,7 @@ resource "cloudca_instance" "node" {
   compute_offering = "Standard"
   cpu_count        = 4
   memory_in_mb     = 16384
-  template         = "Ubuntu 18.04.2"
+  template         = "Ubuntu 18.04"
   ssh_key_name     = var.ssh_key_name
   user_data        = var.cloudinit_data
   count            = var.node_count
@@ -22,13 +22,13 @@ resource "cloudca_volume" "volume" {
 
 resource "null_resource" "mount_volume" {
   count      = var.node_count
-  depends_on = ["cloudca_instance.node", "cloudca_volume.volume"]
+  depends_on = [cloudca_instance.node, cloudca_volume.volume]
 
   provisioner "remote-exec" {
     inline = [
       "if [ -d /data ]; then exit 0; fi",
       "sudo mkdir /data",
-      "sudo parted /dev/xvdb mklabel gpt mkpart ext4 0 100% i",
+      "sudo parted /dev/xvdb --script mklabel gpt mkpart ext4 0 100%",
       "sudo mkfs.ext4 /dev/xvdb1",
       "echo '/dev/xvdb1    /data    ext4    defaults    0 2' | sudo tee -a /etc/fstab",
       "sudo mount -a",
@@ -45,11 +45,19 @@ resource "null_resource" "mount_volume" {
 
 resource "null_resource" "node_setup" {
   count      = var.node_count
-  depends_on = ["null_resource.mount_volume"]
+  depends_on = [null_resource.mount_volume]
 
   provisioner "remote-exec" {
     inline = [
-      "swapoff -a"
+      "echo 'checking if cloud-init is running updates'",
+      "sudo bash -c 'until [ ! -f /tmp/cloud_init.lock ]; do sleep 1; done;'",
+      "echo 'cloud-init updates are completed'",
+    ]
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo /sbin/swapoff -a"
     ]
   }
 

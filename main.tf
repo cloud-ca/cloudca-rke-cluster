@@ -18,8 +18,8 @@ resource "tls_private_key" "ssh_key" {
 
 resource "cloudca_ssh_key" "ssh_key" {
   environment_id = var.environment_id
-  name           = "${format("%s-%s-%s_key", var.node_prefix, var.node_type, var.node_service)}"
-  public_key     = "${replace(tls_private_key.ssh_key.public_key_openssh, "\n", "")}"
+  name           = format("%s-%s-%s_key", var.node_prefix, var.node_type, var.node_service)
+  public_key     = replace(tls_private_key.ssh_key.public_key_openssh, "\n", "")
 }
 
 data "template_file" "cloudinit" {

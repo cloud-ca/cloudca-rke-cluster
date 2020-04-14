@@ -11,3 +11,4 @@ id_rsa.pub
 *.pem
 tflog
 generated/
+.DS_Store
