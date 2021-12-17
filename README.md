@@ -22,7 +22,7 @@ It will create the required infrastructure:
 ## Requirements
 
 - [Terraform](https://www.terraform.io/downloads.html) 0.12+
-- [Terraform Provider for cloud.ca](https://github.com/cloud-ca/terraform-provider-cloudca) 1.5+
+- [Terraform Provider for cloud.ca](https://registry.terraform.io/providers/cloud-ca/cloudca/latest) 1.6+
 - [Terraform Provider for RKE](https://github.com/yamamoto-febc/terraform-provider-rke) 0.14.1
 - [terraform-docs](https://github.com/segmentio/terraform-docs) 0.8+
 
@@ -38,7 +38,7 @@ To get the list of available (and the default) version of Kubernetes take a look
 
 | Name | Version |
 |------|---------|
-| cloudca | ~> 1.5 |
+| cloudca | ~> 1.6 |
 | local | n/a |
 | rke | 0.14.1 |
 | template | n/a |
