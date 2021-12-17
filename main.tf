@@ -1,5 +1,13 @@
+terraform {
+  required_providers {
+    cloudca = {
+      source = "cloud-ca/cloudca"
+      version = "1.6.1"
+    }
+  }
+}
+
 provider "cloudca" {
-  version = "~> 1.5"
   api_key = var.api_key
 }
 
